@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome To Triangle Calculator</h1>
+        </header>
+
+        <main>
+            <section class="calculator-section">
+                <h2>Luas Segitiga</h2>
+                <div class="formula-display">
+                    <p>Rumus menghitung luas segitiga :</p>
+                    <p>0.5 x alas x tinggi</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="base">Alas (a):</label>
+                    <input type="number" id="base" placeholder="Masukan panjang alas">
+                </div>
+                <div class="input-group">
+                    <label for="height">Tinggi (t) :</label>
+                    <input type="number" id="height" placeholder="Masukan tinggi">
+                </div>
+                <button id="calculator-area">Hitung Luas Segitiga</button>
+                <div id="area-result" class="result"></div>
+            </section>
+
+            <section class="calculator-section">
+                <h2>Keliling Segitiga</h2>
+                <div class="formula-display">
+                    <p>Rumus menghitung Keliling Segitiga</p>
+                    <p>K = sisi A + sisi B + sisi C</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="sideA">Sisi A:</label>
+                    <input type="number" id="sideA" placeholder="Masukan Panjang sisi A">
+                </div>
+
+                <div class="input-group">
+                    <label for="sideB">Sisi B:</label>
+                    <input type="number" id="sideB" placeholder="Masukan Panjang sisi B">
+                </div>
+
+                <div class="input-group">
+                    <label for="sideC">Sisi C:</label>
+                    <input type="number" id="sideC" placeholder="Masukan Panjang sisi C">
+                </div>
+                <button id="calculator-perimeter">Hitung Keliling Segitiga</button>
+                <div id="perimeter-result" class="result"></div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
