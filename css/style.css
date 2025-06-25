@@ -61,3 +61,15 @@ input[type="number"] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f0fe;
+    border-radius: 4px;
+    display: none;
+}
+
+h1, h2 {
+    color: #1a73e8;
+}
