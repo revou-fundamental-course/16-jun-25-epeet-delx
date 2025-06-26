@@ -304,12 +304,6 @@ input[type="number"]:focus {
     background: linear-gradient(to right, transparent, var(--primary), transparent);
 }
 
-.heart {
-    color: var(--warning);
-    display: inline-block;
-    animation: pulse 1.5s infinite;
-}
-
 .creator-link {
     text-decoration: none;
     color: var(--primary);
