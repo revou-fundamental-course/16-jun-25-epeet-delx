@@ -1,82 +1,288 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+:root {
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --accent: #4895ef;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #4cc9f0;
+    --warning: #f72585;
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    z-index: -1;
 }
 
 .container {
-    width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem;
 }
 
-header {
+.header {
     text-align: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    animation: fadeIn 1s ease;
 }
 
-button {
-    padding: 8px 15px;
-    margin: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #1a73e8;
-    color: white;
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-button:hover {
-    background-color: #0d5bba;
+.triangle-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    animation: bounce 2s infinite;
 }
 
-.calculator-section {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: linear-gradient(to right, #4361ee, #3a0ca3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.calculator-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 0.8s ease;
+}
+
+.calculator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+img {
+    width: 50%;
+    align-items: center;
+}
+
+.triangle-shape {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid #e3f2fd;
+    margin: 0 auto;
+    position: relative;
+}
+
+.triangle-shape-2 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #f3e5f5;
+    margin: 0 auto;
+    position: relative;
+}
+
+.triangle-label {
+    position: absolute;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.triangle-label.a {
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.triangle-label.t {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.triangle-label.b {
+    bottom: -25px;
+    right: 30%;
+}
+
+.triangle-label.c {
+    bottom: -25px;
+    left: 30%;
+}
+
+.formula-box {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--secondary);
+    border-left: 4px solid var(--accent);
 }
 
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
 }
 
 input[type="number"] {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.result {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #e8f0fe;
-    border-radius: 4px;
-    display: none;
+input[type="number"]:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
 }
 
-h1, h2 {
-    color: #1a73e8;
-}
-
-.triangle {
+.calculate-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: 30px 0;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    margin: 1.5rem 0;
+}
+
+.calculate-btn:hover {
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.calculate-btn .icon {
+    font-size: 1.2rem;
+}
+
+.result-box {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ddd;
+    transition: all 0.3s ease;
+}
+
+.result-placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.result-box.has-result {
+    background: #e8f5e9;
+    border-color: #a5d6a7;
+    border-style: solid;
+}
+
+.result-box .result-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        margin-bottom: 2rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
 }
